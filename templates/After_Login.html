@@ -1,0 +1,175 @@
+{%  extends 'index.html' %}
+{% block title %} 
+ Home
+{%endblock title %}
+
+
+{% block body%}
+<div id="carouselExampleRide" class="carousel slide mb-5" data-bs-ride="true">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="static/me7.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <p class="fs-1">Welcome to Mech-Buddies</p>
+            
+          </div>
+    
+      </div>
+      <div class="carousel-item">
+        <img src="https://source.unsplash.com/random/1400x400/?Repair" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://source.unsplash.com/random/1400x400/?mechanics" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <h1 class="text-center">Services</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4 mb-5 mx-5">
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/fuel.png" width=200 height= 250 class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Fuel Delivery</h5>
+          <p class="card-text">Run out of fuel? No problem! We provide fast and reliable emergency fuel delivery services to get you back on the road in no time.</p>
+          <a type="submit" class="btn btn-primary" href="/Checkout">Book now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/engine.png" width=200 height= 250 class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Engine Diagnostic</h5>
+          <p class="card-text">Is your check engine light on? Our experts can quickly diagnose the problem and provide you with the necessary repairs to keep your engine running smoothly.
+        </p>
+        <a type="submit" class="btn btn-primary" href="/Checkout">Book now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/wheel.png" width=200 height= 250 class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Wheel Alignment</h5>
+          <p class="card-text">Is your car pulling to one side or shaking? We can help! Our experts can quickly identify the problem and get your wheels aligned in no time.</p>
+          <a type="submit" class="btn btn-primary" href="/Checkout">Book now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 mb-5 mx-5">
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/mech.png" width=200 height= 250 class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Mechanical Fault</h5>
+          <p class="card-text">Got a mechanical fault in your car? Our team of experts is always on standby to provide you with the necessary repairs and maintenance to get your car back on the road.
+        </p>
+        <a type="submit" class="btn btn-primary" href="/Checkout">Book now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/ac.png" width=200 height= 250  class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">AC Repair</h5>
+          <p class="card-text"> Is your car's AC not working properly? Our team of experts can provide you with the necessary repairs to keep you cool and comfortable on the road.
+        </p>
+        <a type="submit" class="btn btn-primary" href="/Checkout">Book now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/oil.png" width=200 height= 250  class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Oil Change</h5>
+          <p class="card-text">Regular oil changes are essential to keep your engine running smoothly. Our experts can provide you with a quick and hassle-free oil change service to keep your engine in top condition.
+        </p>
+        <a type="submit" class="btn btn-primary" href="/Checkout">Book now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 mb-5 mx-5">
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/key.png" width=200 height= 250  class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Key Lockout</h5>
+          <p class="card-text">Locked out of your car? Don't worry! We provide quick and efficient key lockout services to help you get back on the road.
+        </p>
+        <a type="submit" class="btn btn-primary" href="/Checkout">Book now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/breakrepair.png" width=200 height= 250  class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Break Repair</h5>
+          <p class="card-text">Faulty brakes can be dangerous. Our team of experts can provide you with the necessary brake repairs and maintenance to ensure your safety on the road.
+        </p>
+        <a type="submit" class="btn btn-primary" href="/Checkout">Book now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/carwash.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Car Wash</h5>
+          <p class="card-text">We offer top-notch automobile washing services to keep your car looking shiny and new.
+        </p>
+        <a type="submit" class="btn btn-primary" href="/Checkout">Book now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 mb-5 mx-5">
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/paint.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Car Paint</h5>
+          <p class="card-text">Our professional technicians can help you restore the appearance of your car with our car paint services. We offer a range of options to meet your needs, from touch-up paint to complete paint jobs.</p>
+          <a type="submit" class="btn btn-primary" href="/Checkout">Book now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/design.png" width=200 height= 250  class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Automobile Designing</h5>
+          <p class="card-text">No matter what the problem is, our team of experts can provide you with the necessary repairs and maintenance to get your car back on the road.
+        </p>
+        <a type="submit" class="btn btn-primary" href="/Checkout">Book now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/vehicletow.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Vechical Tow</h5>
+          <p class="card-text">If your car has broken down, been in an accident, or is otherwise unable to be driven, our reliable towing services are here to help. </p>
+          <a type="submit" class="btn btn-primary" href="/Checkout">Book now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock body%}

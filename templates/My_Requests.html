@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% block title %} My Requests {% endblock title %}
+
+{% block body %}
+<h1 class="text-center my-4">My Service Requests</h1>
+
+<div class="container mb-5">
+  <table class="table table-striped">
+    <thead>
+      <tr><th>Request ID</th><th>Service</th><th>Vehicle</th><th>Status</th><th>Requested At</th></tr>
+    </thead>
+    <tbody>
+      {% for r in requests %}
+      <tr>
+        <td>{{ r.request_id }}</td>
+        <td>{{ r.service.service_name|default:"—" }}</td>
+        <td>{{ r.vehicle.brand|default:"—" }} {{ r.vehicle.model|default:"" }}</td>
+        <td>
+          <span class="badge
+            {% if r.status == 'PENDING' %}bg-warning text-dark
+            {% elif r.status == 'IN_PROGRESS' %}bg-info text-dark
+            {% elif r.status == 'COMPLETED' %}bg-success
+            {% else %}bg-secondary{% endif %}">
+            {{ r.get_status_display }}
+          </span>
+        </td>
+        <td>{{ r.requested_at|date:"d M Y, H:i" }}</td>
+      </tr>
+      {% empty %}
+      <tr><td colspan="5" class="text-center text-muted">No requests yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock body %}

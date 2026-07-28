@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block title %} Services {% endblock title %}
+
+{% block body %}
+<h1 class="text-center my-3">Our Services</h1>
+<div class="row mb-2 mx-3">
+  {% for service in services %}
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mx-2">
+      <div class="col p-4 d-flex flex-column position-static">
+        <h3 class="mb-0">{{ service.service_name }}</h3>
+        <p class="card-text mb-2">{{ service.description }}</p>
+        <p class="fw-bold text-primary">₹{{ service.price }}</p>
+        <a href="/Checkout?service_id={{ service.service_id }}" class="btn btn-primary mt-auto align-self-start">Book now</a>
+      </div>
+      {% if service.image_name %}
+      <div class="col-auto d-none d-lg-block">
+        <img width="200" height="250" src="/static/{{ service.image_name }}" alt="{{ service.service_name }}" style="object-fit: cover;">
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% empty %}
+  <p class="text-center text-muted">No services available yet — run <code>python manage.py seed_services</code>.</p>
+  {% endfor %}
+</div>
+{% endblock body %}

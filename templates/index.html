@@ -1,0 +1,124 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} {%endblock title %}RoadSide Assistance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'custom.css' %}">
+  </head>
+  
+  <body >
+    <nav class="navbar navbar-expand-lg fs-6 sticky-top">
+      <div class="container-fluid">
+       <a href="/"> <img src="static/logo1.png" width=120 height=63></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="/About">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Services">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Customer">Customer Support</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/FAQ">FAQ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#footer">Contact us</a>
+            </li>
+            {% if request.session.user_id %}
+            <li class="nav-item">
+                <a class="nav-link" href="/Vehicles">My Garage</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/My_Requests">My Requests</a>
+            </li>
+            {% endif %}
+          </ul>
+
+          <button id="theme-toggle-btn" class="me-3" title="Toggle dark mode">🌙</button>
+
+          {% if request.session.user_id %}
+            <span class="me-3 align-self-center">Hi, {{ request.session.user_name }}</span>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <a class="btn btn-outline-primary rounded text-center" href="/Logout">Logout</a>
+            </div>
+          {% else %}
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end m-2">
+                <a class="btn btn-primary rounded text-center" href="/Sign_up">Sign up</a>
+              </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a class="btn btn-primary rounded text-center" href="/Login">Login</a>
+              </div>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+
+      {% block body %}{% endblock body %}
+
+      <footer class="container-fluid text-center mt-3" style="background-color: 	#C8C8C8;" id="footer">
+       <div>
+       <div class="row ">
+        <div class="col mt-3">
+        <p class="text-start fw-bold fs-5 text-decoration-underline">Our Phone Number:
+          <div class= "me-auto mb-2 mb-lg-0 text-start">
+            <div>
+              Office Number: 250-374-6281
+            </div>
+            <div class ="my-2">
+              Toll Free: 91-977-374-6281
+            </div>
+            <div class="mb-2">
+              Mail: Mechbuddies@mech.com
+            </div>
+            <div>
+              Fax Number: 250-374-2654
+            </div>
+          </div>
+          </p>
+          </div>
+        
+          <div class="col mt-3">
+            <p class="text-start fw-bold fs-5 text-decoration-underline">Our Address:
+              <div class= "me-auto mb-4 mb-lg-0 text-start ">
+                <div>52 Sky Towers, Chanakya Palace, New Delhi, Delhi, India</div>
+                <div class="my-2">89th High Rise Avenue, Navi Mumbai, Maharashtra</div>
+              </div>
+              </p>
+            </div>
+
+            <div class= "row text-start container-flex" >
+              <p class="fs-5 fw-bold text-decoration-underline my-3"> Customer Review 
+                  <form class=" form-outline w-50 " method='post' action="" ><div>
+                  {% csrf_token %}
+                  <label for="exampleFormControlInput1" class="form-label">Email </label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="Email">
+                </div>
+                <div class="form-outline w-85 mb-4">
+                  <label for="exampleFormControlTextarea1" class="form-label ">Comment</label>
+                  <textarea class="form-control" rows="4" id="exampleFormControlTextarea1" name="Comment"></textarea>
+                </div>
+                  <button class="btn btn-primary rounded text-center" type="submit" >submit</button>
+              </form>
+              </p>
+            </div>
+        </div> 
+      </footer>
+
+      <div>
+       <p class="text-center fw-bold" style="background-color: 	#5A5A5A;">Copyright © 2023 Mech-Buddies. All rights reserved.</p>
+      </div>
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="{% static 'custom.js' %}"></script>
+  </body>
+</html>

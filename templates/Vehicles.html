@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block title %} My Garage {% endblock title %}
+
+{% block body %}
+<h1 class="text-center my-4">My Garage</h1>
+
+<div class="container mb-5" style="max-width: 500px;">
+  <form method="post" action="">
+    {% csrf_token %}
+    <div class="mb-3"><label class="form-label">Brand</label>{{ form.brand }}</div>
+    <div class="mb-3"><label class="form-label">Model</label>{{ form.model }}</div>
+    <div class="mb-3"><label class="form-label">Color</label>{{ form.color }}</div>
+    <div class="mb-3"><label class="form-label">Year</label>{{ form.year }}</div>
+    <div class="mb-3"><label class="form-label">License Plate</label>{{ form.license_plate }}</div>
+    <button type="submit" class="btn btn-primary w-100">Add Vehicle</button>
+  </form>
+</div>
+
+<div class="container">
+  <h3 class="mb-3">Your Vehicles</h3>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for vehicle in vehicles %}
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ vehicle.brand }} {{ vehicle.model }}</h5>
+          <p class="card-text mb-1">Color: {{ vehicle.color }}</p>
+          <p class="card-text mb-1">Year: {{ vehicle.year }}</p>
+          <p class="card-text text-muted">Plate: {{ vehicle.license_plate }}</p>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p class="text-muted">No vehicles added yet.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock body %}
