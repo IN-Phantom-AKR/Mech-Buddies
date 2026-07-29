@@ -6,7 +6,8 @@
 
 A Django web app connecting drivers with roadside assistance services — fuel delivery, towing, tire/wheel repair, and more — with online booking and a payment flow.
 
-**Live Demo Link:** https://mechbuddies.pythonanywhere.com/
+**Live Demo Link:** https://mechbuddies.pythonanywhere.com
+
 **GitHub Repository** https://github.com/IN-Phantom-AKR/Mech-Buddies
 
 ## Tech Stack
